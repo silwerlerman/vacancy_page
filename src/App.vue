@@ -1,21 +1,24 @@
 <template>
-  <div id="Vacancy__page"></div>
+  <div class="app">
+    <VacancyPage />
+    <RightPanel />
+  </div>
 </template>
 
 <script>
+import VacancyPage from "@/components/parts/VacancyPage";
+import RightPanel from "@/components/parts/RightPanel";
 export default {
-  name: "Vacancy__page",
-  components: {},
+  name: "app",
+  components: { VacancyPage, RightPanel },
 };
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.app {
+  font-family: Arial;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 </style>
