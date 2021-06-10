@@ -20,5 +20,6 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  background-color: #f1f1f1;
 }
 </style>
