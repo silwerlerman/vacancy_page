@@ -6,6 +6,7 @@
       <VacancyCompetencies />
       <p class="competencies__update">Последние изменения: {{ lastUpdate }}</p>
     </div>
+    <VacancyConditions />
   </div>
 </template>
 
@@ -13,6 +14,7 @@
 import VacancyHeader from "./VacancyHeader";
 import VacancyDevider from "@/components/elements/VacancyDevider";
 import VacancyCompetencies from "./VacancyCompetencies";
+import VacancyConditions from "./VacancyConditions";
 export default {
   data() {
     return {
@@ -20,7 +22,12 @@ export default {
     };
   },
   name: "vacancy-page",
-  components: { VacancyHeader, VacancyDevider, VacancyCompetencies },
+  components: {
+    VacancyHeader,
+    VacancyDevider,
+    VacancyCompetencies,
+    VacancyConditions,
+  },
 };
 </script>
 

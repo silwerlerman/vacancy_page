@@ -13,7 +13,7 @@
 <script>
 import VacancyDevider from "@/components/elements/VacancyDevider";
 export default {
-  name: "vacancy-page",
+  name: "vacancy-competencies",
   components: { VacancyDevider },
 };
 </script>
