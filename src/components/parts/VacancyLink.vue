@@ -19,9 +19,10 @@ export default {
 };
 </script>
 
-<style>
-.department__title {
-  margin: 0px;
+<style scoped>
+.item__label {
+  margin: 0px 5px 0px 0px;
+  align-self: center;
 }
 .link__items {
   display: flex;

@@ -1,11 +1,14 @@
 <template>
-  <div class="vacancy-competencies">
+  <div class="vacancy-skills">
     <VacancyDevider deviderSize="24" />
-    <h3 class="competencies__title">Ключевые навыки</h3>
+    <h3 class="skills__title">Желательные навыки</h3>
     <VacancyDevider deviderSize="12" />
     <div class="header__tags">
-      <el-tag class="tags__item" type="info">CMS на PHP</el-tag>
-      <el-tag class="tags__item" type="info">GIT</el-tag>
+      <el-tag class="tags__item" type="info">Data Center Architecture</el-tag>
+      <el-tag class="tags__item" type="info">Spring (All)</el-tag>
+      <el-tag class="tags__item" type="info">Node.js</el-tag>
+      <el-tag class="tags__item" type="info">Computer science</el-tag>
+      <el-tag class="tags__item" type="info">ReactJS</el-tag>
     </div>
   </div>
 </template>
@@ -13,17 +16,17 @@
 <script>
 import VacancyDevider from "@/components/elements/VacancyDevider";
 export default {
-  name: "vacancy-competencies",
+  name: "vacancy-skills",
   components: { VacancyDevider },
 };
 </script>
 
 <style scoped>
-.competencies__title {
+.skills__title {
   margin: 0px;
 }
-.vacancy-competencies {
-  max-width: 530px;
+.vacancy-skills {
+  max-width: 660px;
 }
 .vacancy-header {
   display: flex;
@@ -32,8 +35,6 @@ export default {
 .header__tags {
   display: flex;
   flex-direction: row;
-  max-width: 530px;
-  flex-wrap: wrap;
 }
 .tags__item {
   margin-right: 8px;

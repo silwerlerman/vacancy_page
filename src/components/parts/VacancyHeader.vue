@@ -41,7 +41,12 @@
           <Button v-bind:iconName="button.iconName" v-bind:text="button.text" />
         </div>
       </div>
-      <Button iconName="VerticalEllepsis" type="text" text="" />
+      <Button
+        class="buttton__item-ellepsis"
+        iconName="VerticalEllepsis"
+        type="text"
+        text=""
+      />
     </div>
   </div>
 </template>
@@ -110,7 +115,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .area-middle__item {
   margin-right: 35px;
 }
@@ -123,6 +128,9 @@ export default {
 }
 .buttons__item {
   margin-right: 15px;
+}
+.buttton__item-ellepsis {
+  padding-top: 7px;
 }
 .flex-between {
   justify-content: space-between;

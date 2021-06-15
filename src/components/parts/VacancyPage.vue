@@ -10,6 +10,7 @@
     <VacancyDepartment />
     <VacancyTeam />
     <VacancyLink />
+    <VacancySkills />
   </div>
 </template>
 
@@ -21,6 +22,7 @@ import VacancyConditions from "./VacancyConditions";
 import VacancyDepartment from "./VacancyDepartment";
 import VacancyTeam from "./VacancyTeam";
 import VacancyLink from "./VacancyLink";
+import VacancySkills from "./VacancySkills";
 export default {
   data() {
     return {
@@ -36,11 +38,12 @@ export default {
     VacancyDepartment,
     VacancyTeam,
     VacancyLink,
+    VacancySkills,
   },
 };
 </script>
 
-<style>
+<style scoped>
 .competencies__update {
   padding-top: 25px;
   margin: 0px 0px 0px -70px;

@@ -36,8 +36,11 @@ export default {
 };
 </script>
 
-<style>
-.el-button {
+<style scoped>
+.el-button--text {
+  padding: 0px;
+}
+.el-button--primary {
   align-items: flex-start;
   background: #eff8ff;
   border-radius: 12px;

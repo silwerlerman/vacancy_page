@@ -65,8 +65,12 @@ export default {
 };
 </script>
 <style scoped>
+.link__items {
+  display: flex;
+}
 .items__link {
   display: flex;
+  padding-top: 1px;
 }
 .el-link--primary {
   border-bottom-color: #57a2e8;

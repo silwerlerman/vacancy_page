@@ -36,12 +36,34 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .department__title {
   margin: 0px;
+}
+.vacancy-header {
+  display: flex;
+  flex-direction: column;
+}
+.header__tags {
+  display: flex;
+  flex-direction: row;
+  max-width: 530px;
+  flex-wrap: wrap;
 }
 .department__item {
   display: flex;
   flex-direction: row;
+}
+.item__label {
+  margin: 0px;
+  font-size: 14px;
+  line-height: 24px;
+  margin-right: 4px;
+}
+.item__value {
+  margin: 0px;
+  font-size: 14px;
+  line-height: 24px;
+  color: #2d81ce;
 }
 </style>
