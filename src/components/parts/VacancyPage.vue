@@ -9,6 +9,7 @@
     <VacancyConditions />
     <VacancyDepartment />
     <VacancyTeam />
+    <VacancyLink />
   </div>
 </template>
 
@@ -19,6 +20,7 @@ import VacancyCompetencies from "./VacancyCompetencies";
 import VacancyConditions from "./VacancyConditions";
 import VacancyDepartment from "./VacancyDepartment";
 import VacancyTeam from "./VacancyTeam";
+import VacancyLink from "./VacancyLink";
 export default {
   data() {
     return {
@@ -33,6 +35,7 @@ export default {
     VacancyConditions,
     VacancyDepartment,
     VacancyTeam,
+    VacancyLink,
   },
 };
 </script>
