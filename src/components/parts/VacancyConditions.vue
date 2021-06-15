@@ -1,5 +1,5 @@
 <template>
-  <div class="vacancy-conditions">
+  <div>
     <VacancyDevider deviderSize="24" />
     <h3 class="conditions__title">Основные условия</h3>
     <VacancyDevider deviderSize="12" />
@@ -47,8 +47,6 @@ export default {
 <style>
 .conditions__title {
   margin: 0px;
-}
-.vacancy-conditions {
 }
 .vacancy-header {
   display: flex;
