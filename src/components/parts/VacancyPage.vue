@@ -8,6 +8,7 @@
     </div>
     <VacancyConditions />
     <VacancyDepartment />
+    <VacancyTeam />
   </div>
 </template>
 
@@ -17,6 +18,7 @@ import VacancyDevider from "@/components/elements/VacancyDevider";
 import VacancyCompetencies from "./VacancyCompetencies";
 import VacancyConditions from "./VacancyConditions";
 import VacancyDepartment from "./VacancyDepartment";
+import VacancyTeam from "./VacancyTeam";
 export default {
   data() {
     return {
@@ -30,6 +32,7 @@ export default {
     VacancyCompetencies,
     VacancyConditions,
     VacancyDepartment,
+    VacancyTeam,
   },
 };
 </script>

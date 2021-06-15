@@ -3,7 +3,11 @@
     <VacancyDevider deviderSize="24" />
     <h3 class="conditions__title">Основные условия</h3>
     <VacancyDevider deviderSize="12" />
-    <div class="conditions__item" v-for="item in conditions" :key="item.id">
+    <div
+      class="conditions__item"
+      v-for="(item, index) in conditions"
+      :key="index"
+    >
       <p class="item__label">{{ item.label }}:</p>
       <p class="item__value">{{ item.value }}</p>
     </div>
@@ -17,22 +21,18 @@ export default {
     return {
       conditions: [
         {
-          id: 1,
           label: "Оклад",
           value: "80000 до 100000 р.",
         },
         {
-          id: 2,
           label: "Бонусы",
           value: "10%",
         },
         {
-          id: 3,
           label: "Опыт работы",
           value: "Опыт от 0 лет",
         },
         {
-          id: 4,
           label: "Потребность",
           value: "5 человек",
         },
