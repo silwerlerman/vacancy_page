@@ -11,6 +11,7 @@
     <VacancyTeam />
     <VacancyLink />
     <VacancySkills />
+    <VacancyPosConditions />
   </div>
 </template>
 
@@ -23,6 +24,7 @@ import VacancyDepartment from "./VacancyDepartment";
 import VacancyTeam from "./VacancyTeam";
 import VacancyLink from "./VacancyLink";
 import VacancySkills from "./VacancySkills";
+import VacancyPosConditions from "./VacancyPosConditions";
 export default {
   data() {
     return {
@@ -39,6 +41,7 @@ export default {
     VacancyTeam,
     VacancyLink,
     VacancySkills,
+    VacancyPosConditions,
   },
 };
 </script>
