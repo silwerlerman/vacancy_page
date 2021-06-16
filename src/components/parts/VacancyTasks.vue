@@ -1,9 +1,9 @@
 <template>
   <div>
     <VacancyDevider deviderSize="24" />
-    <h3 class="pos-conditions__title">Должностные требования</h3>
+    <h3 class="tasks__title">Должностные требования</h3>
     <VacancyDevider deviderSize="12" />
-    <ul class="pos-conditions__item">
+    <ul class="tasks__item">
       <li
         class="item__label"
         v-for="(item, index) in conditions"
@@ -20,12 +20,7 @@ import VacancyDevider from "@/components/elements/VacancyDevider";
 export default {
   data() {
     return {
-      conditions: [
-        "Знание PHP, SQL, HTML, CSS",
-        "Опыт работы c Git Понимание принципов MVC, знание фреймворков",
-        "Желание учиться и развиваться",
-        "Будет плюсом: Опыт работы с CMS на PHP",
-      ],
+      conditions: ["Разработка проектов на платформе SiuteCRM"],
     };
   },
   name: "vacancy-pos-conditions",
@@ -34,10 +29,10 @@ export default {
 </script>
 
 <style scoped>
-.pos-conditions__title {
+.tasks__title {
   margin: 0px;
 }
-.pos-conditions__item {
+.tasks__item {
   margin: 0px;
   padding-left: 25px;
 }
