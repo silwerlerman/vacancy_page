@@ -13,6 +13,7 @@
     <VacancySkills />
     <VacancyPosConditions />
     <VacancyTasks />
+    <VacancyTabBar />
   </div>
 </template>
 
@@ -27,10 +28,12 @@ import VacancyLink from "./VacancyLink";
 import VacancySkills from "./VacancySkills";
 import VacancyPosConditions from "./VacancyPosConditions";
 import VacancyTasks from "./VacancyTasks";
+import VacancyTabBar from "./VacancyTabBar";
 export default {
   data() {
     return {
       lastUpdate: "25.05.2021",
+      tabsNames: ["История", "Документы"],
     };
   },
   name: "vacancy-page",
@@ -45,6 +48,7 @@ export default {
     VacancySkills,
     VacancyPosConditions,
     VacancyTasks,
+    VacancyTabBar,
   },
 };
 </script>

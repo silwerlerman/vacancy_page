@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import VacancyPage from "@/components/parts/VacancyPage";
-import RightPanel from "@/components/parts/RightPanel";
+import VacancyPage from "@/components/parts/VacancyPage/VacancyPage";
+import RightPanel from "@/components/parts/RightPanel/RightPanel";
 export default {
   name: "app",
   components: { VacancyPage, RightPanel },
