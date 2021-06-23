@@ -2,7 +2,7 @@
   <div class="right-panel">
     <PanelTabBar />
     <div class="right-panel__content">
-      <PanelProgressBar />
+      <PanelProgressBar candidates="3" maxCandidates="11" />
     </div>
     <div class="content__center">
       <StagePanel
@@ -45,7 +45,7 @@ export default {
         },
         {
           id: 3,
-          label: "Назначено интервью с рекрутером",
+          label: "Первичное интервью с рекрутером",
           candidates: "0",
           update: "29.05.2021",
         },
@@ -63,13 +63,13 @@ export default {
         },
         {
           id: 6,
-          label: "Назначено интервью с внутренним заказчиком",
+          label: "Назначено интервью с внут. зак.",
           candidates: "0",
           update: "29.05.2021",
         },
         {
           id: 7,
-          label: "Проведено интервью с внутренним заказчиком",
+          label: "Проведено интервью с внут. зак.",
           candidates: "0",
           update: "29.05.2021",
         },
@@ -81,7 +81,43 @@ export default {
         },
         {
           id: 9,
-          label: "Назначено интервью с внешним заказчиком",
+          label: "Назначено интервью с внеш. зак.",
+          candidates: "0",
+          update: "29.05.2021",
+        },
+        {
+          id: 10,
+          label: "Проведено интервью с внеш. зак.",
+          candidates: "0",
+          update: "29.05.2021",
+        },
+        {
+          id: 11,
+          label: "Оффер",
+          candidates: "0",
+          update: "29.05.2021",
+        },
+        {
+          id: 12,
+          label: "Служба безопасности",
+          candidates: "0",
+          update: "29.05.2021",
+        },
+        {
+          id: 13,
+          label: "Подготовка к выходу",
+          candidates: "0",
+          update: "29.05.2021",
+        },
+        {
+          id: 14,
+          label: "Принят",
+          candidates: "0",
+          update: "29.05.2021",
+        },
+        {
+          id: 14,
+          label: "Отказ",
           candidates: "0",
           update: "29.05.2021",
         },

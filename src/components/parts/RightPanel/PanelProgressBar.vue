@@ -4,14 +4,14 @@
       <p class="title__text">Прогресс закрытия вакансии</p>
       <div class="title__counter flex-row">
         <Icon iconName="User-bold" iconColor="#2D81CE" />
-        <p class="text blue">3/5</p>
+        <p class="text blue">{{ candidates }}/{{ maxCandidates }}</p>
       </div>
     </div>
     <div>
       <el-progress
         :stroke-width="12"
         :percentage="percentage"
-        :color="customColors"
+        :color="'#40BF2B'"
         :show-text="false"
       ></el-progress>
     </div>
@@ -49,9 +49,7 @@ export default {
   components: { Icon },
   computed: {
     percentage: function () {
-      return Math.trunc(
-        parseInt(this.candidates) / parseInt(this.maxCandidates)
-      );
+      return (parseInt(this.candidates) / parseInt(this.maxCandidates)) * 100;
     },
   },
 };
