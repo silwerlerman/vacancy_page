@@ -2,9 +2,15 @@
   <div class="vacancy-header">
     <div class="header__area-top flex-between">
       <div class="header__tags">
-        <el-tag v-if="isHard" type="info">Сложная вакансия</el-tag>
+        <Tag text="Сложная вакансия" disabled />
       </div>
-      <el-select v-model="status" placeholder="Select" plain>
+      <el-select
+        v-model="status"
+        placeholder="Select"
+        plain
+        size="small"
+        class="small"
+      >
         <el-option
           v-for="item in options"
           :key="item.value"
@@ -18,34 +24,48 @@
     <h1 class="header__title">{{ vacancyName }}</h1>
     <VacancyDevider deviderSize="24" />
     <div class="header__area-middle">
-      <div
-        class="area-middle__item"
-        v-for="button in middleAreaButtons"
-        :key="button.id"
-      >
-        <Button
-          v-bind:iconName="button.iconName"
-          v-bind:type="button.type"
-          v-bind:text="button.text"
-        />
+      <div class="area-middle__item">
+        <Icon iconName="Location" iconColor="#2d81ce" />
+        <p class="text blue">Москва</p>
+      </div>
+      <div class="area-middle__item">
+        <Icon iconName="User-light" iconColor="#2d81ce" />
+        <p class="text blue">5</p>
+      </div>
+      <div class="area-middle__item">
+        <Icon iconName="Work" iconColor="#2d81ce" />
+        <p class="text blue">Новый (ВТБ МСБ)</p>
+      </div>
+      <div class="area-middle__item">
+        <Icon iconName="RemoteWork" iconColor="#2d81ce" />
+        <p class="text blue">Можно на удаленку</p>
       </div>
     </div>
     <VacancyDevider deviderSize="24" />
     <div class="header__area-bottom flex-between">
       <div class="area-bottom__buttons">
-        <div
-          class="buttons__item"
-          v-for="button in bottomAreaButtons"
-          :key="button.id"
-        >
-          <Button v-bind:iconName="button.iconName" v-bind:text="button.text" />
-        </div>
+        <Button
+          buttonSize="big"
+          buttonColor="blue"
+          buttonText="Открыть позиции"
+          hasLeftIcon
+          iconName="OpenPositions"
+        />
+        <Button
+          buttonSize="big"
+          buttonColor="blue"
+          buttonText="Отменить позиции"
+          hasLeftIcon
+          iconName="CancelPositions"
+        />
       </div>
       <Button
-        class="buttton__item-ellepsis"
+        class="buttons__ellepsis"
+        buttonSize="big"
+        buttonColor="transparent"
+        buttonText=""
+        hasRightIcon
         iconName="VerticalEllepsis"
-        type="text"
-        text=""
       />
     </div>
   </div>
@@ -53,7 +73,9 @@
 
 <script>
 import VacancyDevider from "@/components/elements/VacancyDevider";
-import Button from "@/components/elements/Button";
+import Button from "../../elements/Button";
+import Tag from "@/components/elements/Tag";
+import Icon from "@/components/elements/Icon";
 export default {
   data() {
     return {
@@ -85,18 +107,6 @@ export default {
           text: "Можно на удаленку",
         },
       ],
-      bottomAreaButtons: [
-        {
-          id: 1,
-          iconName: "OpenPositions",
-          text: "Открыть позиции",
-        },
-        {
-          id: 2,
-          iconName: "CancelPositions",
-          text: "Отменить позиции",
-        },
-      ],
       options: [
         {
           value: "Открыта",
@@ -111,12 +121,14 @@ export default {
     };
   },
   name: "vacancy-header",
-  components: { VacancyDevider, Button },
+  components: { VacancyDevider, Button, Tag, Icon },
 };
 </script>
 
 <style scoped>
 .area-middle__item {
+  display: flex;
+  flex-direction: row;
   margin-right: 35px;
 }
 .area-bottom__buttons,
@@ -125,9 +137,6 @@ export default {
 .header__area-bottom {
   display: flex;
   flex-direction: row;
-}
-.buttons__item {
-  margin-right: 15px;
 }
 .buttton__item-ellepsis {
   padding-top: 7px;
@@ -143,7 +152,7 @@ export default {
   line-height: 48px;
 }
 .el-input__inner {
-  border-radius: 10px;
+  border-radius: 15px;
   color: black;
   height: 32px;
   width: 126px;
@@ -156,7 +165,6 @@ export default {
   padding: 0px 10px;
 }
 .el-button {
-  background: #eff8ff;
   border-radius: 12px;
   border-color: white;
 }
@@ -171,5 +179,17 @@ export default {
 .vacancy-header {
   display: flex;
   flex-direction: column;
+}
+.buttons__ellepsis {
+  padding: 0px;
+}
+.text {
+  margin: 0px;
+  align-self: center;
+  font-size: 16px;
+  margin: 2px 5px 0px 5px;
+}
+.blue {
+  color: #2d81ce;
 }
 </style>

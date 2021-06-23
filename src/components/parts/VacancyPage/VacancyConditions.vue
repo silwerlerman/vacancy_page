@@ -13,31 +13,10 @@
 <script>
 import VacancyDevider from "@/components/elements/VacancyDevider";
 export default {
-  data() {
-    return {
-      conditions: [
-        {
-          id: 1,
-          label: "Оклад",
-          value: "80000 до 100000 р.",
-        },
-        {
-          id: 2,
-          label: "Бонусы",
-          value: "10%",
-        },
-        {
-          id: 3,
-          label: "Опыт работы",
-          value: "Опыт от 0 лет",
-        },
-        {
-          id: 4,
-          label: "Потребность",
-          value: "5 человек",
-        },
-      ],
-    };
+  props: {
+    conditions: {
+      type: Array,
+    },
   },
   name: "vacancy-conditions",
   components: { VacancyDevider },

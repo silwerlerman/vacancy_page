@@ -4,20 +4,27 @@
     <h3 class="skills__title">Желательные навыки</h3>
     <VacancyDevider deviderSize="12" />
     <div class="header__tags">
-      <el-tag class="tags__item" type="info">Data Center Architecture</el-tag>
-      <el-tag class="tags__item" type="info">Spring (All)</el-tag>
-      <el-tag class="tags__item" type="info">Node.js</el-tag>
-      <el-tag class="tags__item" type="info">Computer science</el-tag>
-      <el-tag class="tags__item" type="info">ReactJS</el-tag>
+      <Tag
+        v-for="(tag, index) in skillTags"
+        :key="index"
+        class="tags__item"
+        v-bind:text="tag"
+      />
     </div>
   </div>
 </template>
 
 <script>
 import VacancyDevider from "@/components/elements/VacancyDevider";
+import Tag from "@/components/elements/Tag";
 export default {
+  props: {
+    skillTags: {
+      type: Array,
+    },
+  },
   name: "vacancy-skills",
-  components: { VacancyDevider },
+  components: { VacancyDevider, Tag },
 };
 </script>
 
@@ -45,5 +52,8 @@ export default {
   font-weight: 400;
   font-size: 16px;
   padding: 0px 10px;
+}
+.tags__item {
+  margin-right: 8px;
 }
 </style>

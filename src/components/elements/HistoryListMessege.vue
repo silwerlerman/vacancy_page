@@ -1,6 +1,7 @@
 <template>
   <div class="messages__items">
-    <Button iconName="User-light" type="text" v-bind:text="message.author" />
+    <Icon iconName="User-light" iconColor="#2D81CE" />
+    <p class="text blue">&nbsp;{{ message.author }}</p>
     <div class="items__arrow">
       <svg
         width="4"
@@ -32,18 +33,20 @@
   </div>
 </template>
 <script>
-import Button from "./Button";
+import Icon from "./Icon";
 export default {
   props: {
     message: Object,
   },
-  components: { Button },
+  components: { Icon },
 };
 </script>
 <style scoped>
 .messages__items {
   display: flex;
   flex-direction: row;
+  align-self: center;
+  padding-bottom: 5px;
 }
 .items__text {
   display: flex;
@@ -51,7 +54,6 @@ export default {
   justify-self: center;
 }
 .items__arrow {
-  padding-top: 2px;
   margin: 0px 15px;
 }
 .text {

@@ -1,14 +1,10 @@
 <template>
   <div>
     <VacancyDevider deviderSize="24" />
-    <h3 class="tasks__title">Должностные требования</h3>
+    <h3 class="tasks__title">Обязанности и задачи</h3>
     <VacancyDevider deviderSize="12" />
     <ul class="tasks__item">
-      <li
-        class="item__label"
-        v-for="(item, index) in conditions"
-        :key="index + 1"
-      >
+      <li class="item__label" v-for="(item, index) in tasks" :key="index + 1">
         {{ item }}
       </li>
     </ul>
@@ -18,12 +14,12 @@
 <script>
 import VacancyDevider from "@/components/elements/VacancyDevider";
 export default {
-  data() {
-    return {
-      conditions: ["Разработка проектов на платформе SiuteCRM"],
-    };
+  props: {
+    tasks: {
+      type: Array,
+    },
   },
-  name: "vacancy-pos-conditions",
+  name: "vacancy-tasks",
   components: { VacancyDevider },
 };
 </script>

@@ -1,6 +1,5 @@
 <template>
-  <div class="vacancy-tabs">
-    <VacancyDevider deviderSize="40" />
+  <div class="panel-tabs">
     <el-menu
       default-active="0"
       mode="horizontal"
@@ -8,27 +7,20 @@
       active-text-color="#2d81ce"
       @select="handleSelect"
     >
-      <el-menu-item index="0">История</el-menu-item>
-      <el-menu-item index="1">Документы</el-menu-item>
+      <el-menu-item index="0">Подбор</el-menu-item>
+      <el-menu-item index="1">Комментарии</el-menu-item>
     </el-menu>
-    <VacancyHistoryPost v-if="tabToShow === '0'" v-bind:history="history" />
   </div>
 </template>
 
 <script>
-import VacancyDevider from "@/components/elements/VacancyDevider";
-import VacancyHistoryPost from "@/components/parts/VacancyPage/VacancyHistoryPost";
 export default {
-  props: {
-    history: Array,
-  },
   data() {
     return {
       tabToShow: "0",
     };
   },
-  name: "vacancy-tabs",
-  components: { VacancyDevider, VacancyHistoryPost },
+  name: "panel-tabs",
   methods: {
     handleSelect(key) {
       this.tabToShow = key;
@@ -38,7 +30,7 @@ export default {
 </script>
 
 <style scoped>
-.vacancy-tabs {
+.panel-tabs {
   font-size: 18px;
 }
 .is-active {
@@ -48,12 +40,13 @@ export default {
   margin-bottom: 0px !important;
 }
 .el-menu {
-  margin-top: -20px;
+  margin-top: 10px;
 }
 .el-menu-item {
   font-size: 18px;
   font-weight: bold;
-  margin-right: 40px;
+  margin-right: 15px;
+  margin-left: 25px;
 }
 .el-menu-item.is-active {
   font-size: 18px;

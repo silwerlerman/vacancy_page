@@ -4,17 +4,28 @@
     <h3 class="competencies__title">Ключевые навыки</h3>
     <VacancyDevider deviderSize="12" />
     <div class="header__tags">
-      <el-tag class="tags__item" type="info">CMS на PHP</el-tag>
-      <el-tag class="tags__item" type="info">GIT</el-tag>
+      <Tag
+        v-for="(tag, index) in tags"
+        :key="index"
+        class="tags__item"
+        v-bind:text="tag"
+      />
     </div>
   </div>
 </template>
 
 <script>
 import VacancyDevider from "@/components/elements/VacancyDevider";
+import Tag from "@/components/elements/Tag";
+
 export default {
   name: "vacancy-competencies",
-  components: { VacancyDevider },
+  props: {
+    tags: {
+      type: Array,
+    },
+  },
+  components: { VacancyDevider, Tag },
 };
 </script>
 
@@ -37,12 +48,5 @@ export default {
 }
 .tags__item {
   margin-right: 8px;
-}
-.el-tag {
-  border-radius: 12px;
-  font-family: Arial;
-  font-weight: 400;
-  font-size: 16px;
-  padding: 0px 10px;
 }
 </style>

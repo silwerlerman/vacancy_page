@@ -4,7 +4,7 @@
     <VacancyDevider deviderSize="24" />
     <div class="link__items">
       <p class="item__label">Ссылка на источник резюме</p>
-      <Link hasRightIcon />
+      <Link hasRightIcon v-bind:href="href" />
     </div>
     <VacancyDevider deviderSize="24" hasLine />
   </div>
@@ -14,6 +14,12 @@
 import VacancyDevider from "@/components/elements/VacancyDevider";
 import Link from "@/components/elements/Link";
 export default {
+  props: {
+    href: {
+      type: String,
+      default: "",
+    },
+  },
   name: "vacancy-link",
   components: { VacancyDevider, Link },
 };

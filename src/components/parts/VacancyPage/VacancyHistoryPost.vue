@@ -1,13 +1,13 @@
 <template>
-  <div class="vacancy-history">
+  <div>
     <div class="header__messages">
-      <div v-for="(mes, index) in history" :key="index">
-        <div v-if="showDate(mes.date)">
+      <div v-for="(item, index) in history" :key="index">
+        <div v-if="showDate(item.date)">
           <VacancyDevider deviderSize="32" />
-          <el-tag type="info">{{ mes.date }}</el-tag>
+          <Tag v-bind:text="item.date" />
           <VacancyDevider deviderSize="12" />
         </div>
-        <HistoryListMessege v-bind:message="mes" />
+        <HistoryListMessege v-bind:message="item" />
       </div>
     </div>
   </div>
@@ -16,38 +16,15 @@
 <script>
 import VacancyDevider from "@/components/elements/VacancyDevider";
 import HistoryListMessege from "@/components/elements/HistoryListMessege";
+import Tag from "@/components/elements/Tag";
 export default {
-  data() {
-    return {
-      history: [
-        {
-          date: "25.05.2021",
-          author: "Артем Павловичев",
-          type: "AddCandidate",
-          text: "К вакансии добавлен кандидат",
-          name: "Иванов Дмитрий",
-        },
-        {
-          date: "25.05.2021",
-          author: "Артем Павловичев",
-          type: "FieldUpdate",
-          text: "Обновлено значение поля",
-          fieldName: "Статус",
-          oldValue: "Новая",
-          newValue: "Открыта",
-        },
-        {
-          date: "25.05.2021",
-          author: "Артем Павловичев",
-          type: "VacancyCreate",
-          text: "Создана вакансия",
-          name: "Новая",
-        },
-      ],
-    };
+  props: {
+    history: {
+      type: Array,
+    },
   },
   name: "vacancy-historypost",
-  components: { VacancyDevider, HistoryListMessege },
+  components: { VacancyDevider, HistoryListMessege, Tag },
   methods: {
     showDate: function (value) {
       let lastDate = localStorage.getItem("lastDate");
@@ -69,8 +46,6 @@ export default {
 </script>
 
 <style scoped>
-.vacancy-history {
-}
 .header__messages {
   display: flex;
   flex-direction: column;
@@ -81,8 +56,5 @@ export default {
   font-weight: 400;
   font-size: 16px;
   padding: 0px 10px;
-}
-.el-tabs__header {
-  margin-bottom: 0px !important;
 }
 </style>

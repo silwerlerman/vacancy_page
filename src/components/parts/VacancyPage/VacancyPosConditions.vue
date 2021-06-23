@@ -6,8 +6,8 @@
     <ul class="pos-conditions__item">
       <li
         class="item__label"
-        v-for="(item, index) in conditions"
-        :key="index + 1"
+        v-for="(item, index) in posConditions"
+        :key="index"
       >
         {{ item }}
       </li>
@@ -18,15 +18,10 @@
 <script>
 import VacancyDevider from "@/components/elements/VacancyDevider";
 export default {
-  data() {
-    return {
-      conditions: [
-        "Знание PHP, SQL, HTML, CSS",
-        "Опыт работы c Git Понимание принципов MVC, знание фреймворков",
-        "Желание учиться и развиваться",
-        "Будет плюсом: Опыт работы с CMS на PHP",
-      ],
-    };
+  props: {
+    posConditions: {
+      type: Array,
+    },
   },
   name: "vacancy-pos-conditions",
   components: { VacancyDevider },

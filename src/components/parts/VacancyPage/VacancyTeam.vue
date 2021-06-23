@@ -3,7 +3,7 @@
     <VacancyDevider deviderSize="24" />
     <h3 class="team__title">Команда</h3>
     <VacancyDevider deviderSize="12" />
-    <div class="team__item" v-for="(item, index) in team" :key="index + 1">
+    <div class="team__item" v-for="(item, index) in teamMembers" :key="index">
       <p class="item__label">{{ item.label }}:</p>
       <p class="item__value">{{ item.value }}</p>
     </div>
@@ -13,27 +13,10 @@
 <script>
 import VacancyDevider from "@/components/elements/VacancyDevider";
 export default {
-  data() {
-    return {
-      team: [
-        {
-          label: "Директор БЮ",
-          value: "Ангелина Петрова",
-        },
-        {
-          label: "Директор проекта",
-          value: "Александр Антонов",
-        },
-        {
-          label: "Рекрутер",
-          value: "Артем Павловичев",
-        },
-        {
-          label: "Доп рекрутер",
-          value: "Иван Павлюченко",
-        },
-      ],
-    };
+  props: {
+    teamMembers: {
+      type: Array,
+    },
   },
   name: "vacancy-team",
   components: { VacancyDevider },

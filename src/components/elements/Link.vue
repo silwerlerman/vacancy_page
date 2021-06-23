@@ -15,6 +15,7 @@
         v-bind:style="{ color: color }"
         class="items__link"
         type="primary"
+        v-bind:href="href"
         >headhunter</el-link
       >
     </div>
@@ -51,6 +52,10 @@ export default {
     iconColor: {
       type: String,
       default: "#57a2e8",
+    },
+    href: {
+      type: String,
+      default: "",
     },
   },
   components: { Icon },

@@ -1,7 +1,11 @@
 <template>
   <div class="app">
-    <VacancyPage />
-    <RightPanel />
+    <div class="wrapper">
+      <div class="content">
+        <div><VacancyPage /></div>
+        <div><RightPanel /></div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -17,9 +21,14 @@ export default {
 <style>
 .app {
   font-family: Arial;
+  background-color: #f1f1f1;
+}
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.content {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  background-color: #f1f1f1;
 }
 </style>
