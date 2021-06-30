@@ -1,37 +1,40 @@
 <template>
   <div class="right-panel">
-    <PanelTabBar />
-    <div class="right-panel__content">
-      <PanelProgressBar candidates="3" maxCandidates="11" />
-    </div>
-    <div class="content__center">
-      <StagePanel
-        v-for="(item, index) in stages"
-        :key="index"
-        :title="item.label"
-        :candidateCount="item.candidates"
-      />
-    </div>
-    <div class="content__footer">
-      <Button
-        buttonSize="big"
-        buttonColor="darkBlue"
-        buttonText="Прикрепить кандидата"
-      />
-    </div>
+    <el-tabs v-model="activeName">
+      <el-tab-pane label="Подбор" name="selection"
+        ><div class="right-panel__content">
+          <PanelProgressBar candidates="3" maxCandidates="11" />
+        </div>
+        <div class="content__center">
+          <StagePanel
+            v-for="(item, index) in stages"
+            :key="index"
+            :title="item.label"
+            :candidateCount="item.candidates"
+          />
+        </div>
+        <div class="content__footer">
+          <Button
+            buttonSize="big"
+            buttonColor="darkBlue"
+            buttonText="Прикрепить кандидата"
+          /></div
+      ></el-tab-pane>
+      <el-tab-pane label="Комментарии" name="comments"></el-tab-pane>
+    </el-tabs>
   </div>
 </template>
 
 <script>
-import PanelTabBar from "./PanelTabBar";
 import PanelProgressBar from "./PanelProgressBar";
 import StagePanel from "./StagePanel";
 import Button from "../../elements/Button";
 export default {
   name: "right-panel",
-  components: { PanelTabBar, PanelProgressBar, StagePanel, Button },
+  components: { PanelProgressBar, StagePanel, Button },
   data() {
     return {
+      activeName: "selection",
       stages: [
         {
           id: 1,
@@ -130,14 +133,39 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.el-tabs {
+  & ::v-deep &__item {
+    font-size: 18px;
+    font-weight: bold;
+    color: $blue-600;
+    margin: -10px 0px 7px 0px;
+  }
+  & ::v-deep &__nav-scroll {
+    margin: 25px 0px 0px 25px;
+  }
+  & ::v-deep &__active-bar {
+    background-color: $blue-600;
+    height: 4px;
+  }
+  & ::v-deep &__header {
+    margin: 0px;
+  }
+  & ::v-deep &__nav-wrap::after {
+    height: 1px;
+  }
+  &__nav {
+    margin-left: 25px;
+  }
+}
+
 .right-panel {
   background: $white;
   border-radius: 12px;
-  margin: 20px 0px;
+  margin: 20px 0px 20px 15px;
   min-width: 385px;
   word-wrap: break-word;
   position: fixed;
-  margin-left: 15px;
+  min-height: 680px;
 }
 
 .content__center {
