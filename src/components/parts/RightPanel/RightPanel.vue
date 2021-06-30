@@ -8,8 +8,8 @@
       <StagePanel
         v-for="(item, index) in stages"
         :key="index"
-        v-bind:title="item.label"
-        v-bind:candidateCount="item.candidates"
+        :title="item.label"
+        :candidateCount="item.candidates"
       />
     </div>
     <div class="content__footer">
@@ -28,6 +28,8 @@ import PanelProgressBar from "./PanelProgressBar";
 import StagePanel from "./StagePanel";
 import Button from "../../elements/Button";
 export default {
+  name: "right-panel",
+  components: { PanelTabBar, PanelProgressBar, StagePanel, Button },
   data() {
     return {
       stages: [
@@ -124,14 +126,12 @@ export default {
       ],
     };
   },
-  name: "right-panel",
-  components: { PanelTabBar, PanelProgressBar, StagePanel, Button },
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .right-panel {
-  background: #ffffff;
+  background: $white;
   border-radius: 12px;
   margin: 20px 0px;
   min-width: 385px;
@@ -139,17 +139,19 @@ export default {
   position: fixed;
   margin-left: 15px;
 }
+
 .content__center {
   overflow-y: auto;
-  max-height: 555px;
+  max-height: 416px;
   -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    width: 0;
+  }
 }
-.content__center::-webkit-scrollbar {
-  width: 0;
-}
+
 .content__footer {
   padding: 25px;
-  border-top: 1px solid #ececec;
+  border-top: 1px solid $black-200;
   align-items: stretch;
   flex-direction: column;
   display: flex;

@@ -8,7 +8,7 @@
         v-for="(tag, index) in skillTags"
         :key="index"
         class="tags__item"
-        v-bind:text="tag"
+        :text="tag"
       />
     </div>
   </div>
@@ -18,34 +18,17 @@
 import VacancyDevider from "@/components/elements/VacancyDevider";
 import Tag from "@/components/elements/Tag";
 export default {
+  name: "vacancy-skills",
+  components: { VacancyDevider, Tag },
   props: {
     skillTags: {
       type: Array,
     },
   },
-  name: "vacancy-skills",
-  components: { VacancyDevider, Tag },
 };
 </script>
 
-<style scoped>
-.skills__title {
-  margin: 0px;
-}
-.vacancy-skills {
-  max-width: 660px;
-}
-.vacancy-header {
-  display: flex;
-  flex-direction: column;
-}
-.header__tags {
-  display: flex;
-  flex-direction: row;
-}
-.tags__item {
-  margin-right: 8px;
-}
+<style lang="scss" scoped>
 .el-tag {
   border-radius: 12px;
   font-family: Arial;
@@ -53,7 +36,30 @@ export default {
   font-size: 16px;
   padding: 0px 10px;
 }
+
+.header__tags {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  margin-top: -8px;
+}
+
 .tags__item {
+  margin-top: 8px;
   margin-right: 8px;
+}
+
+.skills__title {
+  margin: 0px;
+}
+
+.vacancy {
+  &-skills {
+    max-width: 660px;
+  }
+  &-header {
+    display: flex;
+    flex-direction: column;
+  }
 }
 </style>

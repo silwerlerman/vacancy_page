@@ -14,28 +14,31 @@
 <script>
 import VacancyDevider from "@/components/elements/VacancyDevider";
 export default {
+  name: "vacancy-tasks",
+  components: { VacancyDevider },
   props: {
     tasks: {
       type: Array,
     },
   },
-  name: "vacancy-tasks",
-  components: { VacancyDevider },
 };
 </script>
 
-<style scoped>
-.tasks__title {
-  margin: 0px;
-}
-.tasks__item {
-  margin: 0px;
-  padding-left: 25px;
-}
+<style lang="scss" scoped>
 .item__label {
   margin: 0px;
   font-size: 15px;
   line-height: 24px;
   margin-right: 4px;
+}
+
+.tasks {
+  &__title {
+    margin: 0px;
+  }
+  &__item {
+    margin: 0px;
+    padding-left: 25px;
+  }
 }
 </style>

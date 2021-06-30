@@ -4,10 +4,10 @@
       <div v-for="(item, index) in history" :key="index">
         <div v-if="showDate(item.date)">
           <VacancyDevider deviderSize="32" />
-          <Tag v-bind:text="item.date" />
+          <Tag :text="item.date" />
           <VacancyDevider deviderSize="12" />
         </div>
-        <HistoryListMessege v-bind:message="item" />
+        <HistoryListMessege :message="item" />
       </div>
     </div>
   </div>
@@ -18,13 +18,13 @@ import VacancyDevider from "@/components/elements/VacancyDevider";
 import HistoryListMessege from "@/components/elements/HistoryListMessege";
 import Tag from "@/components/elements/Tag";
 export default {
+  name: "vacancy-historypost",
+  components: { VacancyDevider, HistoryListMessege, Tag },
   props: {
     history: {
       type: Array,
     },
   },
-  name: "vacancy-historypost",
-  components: { VacancyDevider, HistoryListMessege, Tag },
   methods: {
     showDate: function (value) {
       let lastDate = localStorage.getItem("lastDate");
@@ -45,7 +45,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .header__messages {
   display: flex;
   flex-direction: column;

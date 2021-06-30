@@ -1,7 +1,7 @@
 <template>
   <!-- Новый компонент, сейчас используется для всех кнопок -->
   <el-button
-    v-bind:class="{
+    :class="{
       blueButton: buttonColor === 'blue',
       darkBlueButton: buttonColor === 'darkBlue',
       transparentButton: buttonColor === 'transparent',
@@ -9,26 +9,26 @@
       medium: buttonSize === 'medium',
       small: buttonSize === 'small',
     }"
-    v-bind:disabled="disabled"
+    :disabled="disabled"
     @click="click"
   >
     <div class="button__content">
       <Icon
         v-if="hasLeftIcon"
-        v-bind:icon-name="iconName"
-        v-bind:icon-color="contentColor"
+        :icon-name="iconName"
+        :icon-color="contentColor"
       />
       <p
         v-if="buttonText !== ''"
         class="content__text"
-        v-bind:style="{ color: contentColor }"
+        :style="{ color: contentColor }"
       >
         {{ buttonText }}
       </p>
       <Icon
         v-if="hasRightIcon"
-        v-bind:icon-name="iconName"
-        v-bind:icon-color="contentColor"
+        :icon-name="iconName"
+        :icon-color="contentColor"
       />
     </div>
   </el-button>
@@ -36,6 +36,10 @@
 <script>
 import Icon from "@/components/elements/Icon";
 export default {
+  name: "Button",
+  components: {
+    Icon,
+  },
   props: {
     buttonSize: {
       type: String,
@@ -72,9 +76,6 @@ export default {
       },
     },
   },
-  components: {
-    Icon,
-  },
   computed: {
     contentColor: function () {
       if (this.buttonColor === "darkBlue") {
@@ -88,65 +89,73 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
 .el-button {
   border-radius: 12px;
   padding-top: 7px;
+  &.medium {
+    border-radius: 12px;
+    padding-top: 2px;
+  }
+  &.small {
+    border-radius: 12px;
+    padding-top: 0px;
+  }
 }
-.el-button.medium {
-  border-radius: 12px;
-  padding-top: 2px;
-}
-.el-button.small {
-  border-radius: 12px;
-  padding-top: 0px;
-}
+
 .big {
   height: 40px;
 }
+
 .medium {
   height: 30px;
 }
+
 .small {
   height: 25px;
   padding-top: 5px;
 }
+
 .blueButton {
-  background: #eff8ff;
+  background: $blue-100;
+  &:hover {
+    background: $blue-200;
+    color: $blue-700;
+  }
+  &:disabled {
+    background: $black-100;
+  }
 }
-.blueButton:hover {
-  background: #d6ebff;
-  color: #1767b1;
-}
-.blueButton:disabled {
-  background: #faf9f9;
-}
+
 .darkBlueButton {
-  background: #2d81ce;
+  background: $blue-600;
+  &:hover {
+    background: $blue-700;
+  }
+  &:disabled {
+    background: $black-300;
+  }
 }
-.darkBlueButton:hover {
-  background: #1767b1;
-}
-.darkBlueButton:disabled {
-  background: #e2e2e2;
-}
+
 .transparentButton {
   background: transparent;
   border-color: transparent;
+  &:hover {
+    background: transparent;
+    border-color: transparent;
+    background: $blue-100;
+  }
 }
-.transparentButton:hover {
-  background: transparent;
-  border-color: transparent;
-  background: #eff8ff;
-}
+
 .button__content {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  &-icon {
+    padding-bottom: 2px;
+  }
 }
-.button__content-icon {
-  padding-bottom: 2px;
-}
+
 .content__text {
   font-weight: bold;
   font-size: 16px;

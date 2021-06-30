@@ -8,14 +8,10 @@
       class="items__icon-left"
       v-if="hasLeftIcon"
       iconName="Link"
-      v-bind:iconColor="color"
+      :iconColor="color"
     />
     <div class="items__link">
-      <el-link
-        v-bind:style="{ color: color }"
-        class="items__link"
-        type="primary"
-        v-bind:href="href"
+      <el-link :style="{ color: color }" type="primary" :href="href"
         >headhunter</el-link
       >
     </div>
@@ -23,13 +19,15 @@
       class="items__icon-right"
       v-if="hasRightIcon"
       iconName="Link"
-      v-bind:iconColor="color"
+      :iconColor="color"
     />
   </div>
 </template>
 <script>
 import Icon from "./Icon";
 export default {
+  name: "Link",
+  components: { Icon },
   data() {
     return {
       isOver: true,
@@ -58,7 +56,7 @@ export default {
       default: "",
     },
   },
-  components: { Icon },
+
   methods: {
     colorChangeToDarkBlue: function () {
       this.color = "#1767b1";
@@ -69,7 +67,7 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
 .link__items {
   display: flex;
 }
@@ -78,11 +76,11 @@ export default {
   padding-top: 1px;
 }
 .el-link--primary {
-  border-bottom-color: #57a2e8;
+  border-bottom-color: $blue-400;
   margin-right: 0px;
   border-bottom: 1px solid currentColor;
-}
-.el-link--primary.is-underline:hover:after {
-  border-bottom: 0px solid currentColor;
+  &.is-underline:hover:after {
+    border-bottom: 0px solid currentColor;
+  }
 }
 </style>

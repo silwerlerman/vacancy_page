@@ -3,17 +3,17 @@
     <VacancyHeader />
     <VacancyDevider deviderSize="24" hasLine />
     <div class="vacancy-page__competencies flex-between">
-      <VacancyCompetencies v-bind:tags="competenciesTags" />
+      <VacancyCompetencies :tags="competenciesTags" />
       <p class="competencies__update">Последние изменения: {{ lastUpdate }}</p>
     </div>
-    <VacancyConditions v-bind:conditions="conditions" />
-    <VacancyDepartment v-bind:departments="departments" />
-    <VacancyTeam v-bind:teamMembers="teamMembers" />
-    <VacancyLink v-bind:href="hhHref" />
-    <VacancySkills v-bind:skillTags="skillTags" />
-    <VacancyPosConditions v-bind:posConditions="posConditions" />
-    <VacancyTasks v-bind:tasks="tasks" />
-    <VacancyTabBar v-bind:history="history" />
+    <VacancyConditions :conditions="conditions" />
+    <VacancyDepartment :departments="departments" />
+    <VacancyTeam :teamMembers="teamMembers" />
+    <VacancyLink :href="hhHref" />
+    <VacancySkills :skillTags="skillTags" />
+    <VacancyPosConditions :posConditions="posConditions" />
+    <VacancyTasks :tasks="tasks" />
+    <VacancyTabBar :history="history" />
   </div>
 </template>
 
@@ -30,6 +30,20 @@ import VacancyPosConditions from "./VacancyPosConditions";
 import VacancyTasks from "./VacancyTasks";
 import VacancyTabBar from "./VacancyTabBar";
 export default {
+  name: "vacancy-page",
+  components: {
+    VacancyHeader,
+    VacancyDevider,
+    VacancyCompetencies,
+    VacancyConditions,
+    VacancyDepartment,
+    VacancyTeam,
+    VacancyLink,
+    VacancySkills,
+    VacancyPosConditions,
+    VacancyTasks,
+    VacancyTabBar,
+  },
   data() {
     return {
       lastUpdate: "25.05.2021",
@@ -94,7 +108,8 @@ export default {
       ],
       posConditions: [
         "Знание PHP, SQL, HTML, CSS",
-        "Опыт работы c Git Понимание принципов MVC, знание фреймворков",
+        "Опыт работы c Git",
+        "Понимание принципов MVC, знание фреймворков",
         "Желание учиться и развиваться",
         "Будет плюсом: Опыт работы с CMS на PHP",
       ],
@@ -126,44 +141,32 @@ export default {
       ],
     };
   },
-  name: "vacancy-page",
-  components: {
-    VacancyHeader,
-    VacancyDevider,
-    VacancyCompetencies,
-    VacancyConditions,
-    VacancyDepartment,
-    VacancyTeam,
-    VacancyLink,
-    VacancySkills,
-    VacancyPosConditions,
-    VacancyTasks,
-    VacancyTabBar,
-  },
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.flex-between {
+  justify-content: space-between;
+}
+
 .competencies__update {
   padding-top: 25px;
   margin: 0px 0px 0px -70px;
-  color: #9e9e9e;
+  color: $black-500;
   min-width: 257px;
   max-height: 21px;
 }
+
 .vacancy-page {
-  background: #ffffff;
+  background: $white;
   border-radius: 12px;
   padding: 40px;
   margin: 20px 0px;
   max-width: 720px;
   word-wrap: break-word;
-}
-.vacancy-page__competencies {
-  display: flex;
-  flex-direction: row;
-}
-.flex-between {
-  justify-content: space-between;
+  &__competencies {
+    display: flex;
+    flex-direction: row;
+  }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
-  <div class="panel-progress-bar">
-    <div class="progress-bar__title flex-row">
+  <div class="panel__progressbar">
+    <div class="progressbar__title flex-row">
       <p class="title__text">Прогресс закрытия вакансии</p>
       <div class="title__counter flex-row">
         <Icon iconName="User-bold" iconColor="#2D81CE" />
@@ -20,6 +20,8 @@
 <script>
 import Icon from "@/components/elements/Icon";
 export default {
+  name: "panel-progressbar",
+  components: { Icon },
   props: {
     candidates: {
       type: String,
@@ -46,7 +48,7 @@ export default {
     };
   },
   methods: {},
-  components: { Icon },
+
   computed: {
     percentage: function () {
       return (parseInt(this.candidates) / parseInt(this.maxCandidates)) * 100;
@@ -54,33 +56,40 @@ export default {
   },
 };
 </script>
-<style scoped>
-.panel-progress-bar {
+<style lang="scss" scoped>
+.panel__progressbar {
   padding: 25px;
-  border-bottom: 1px solid #ececec;
+  border-bottom: 1px solid $black-200;
 }
+
 .flex-row {
   display: flex;
   flex-direction: row;
 }
-.progress-bar__title {
+
+.progressbar__title {
   margin: 0px 0px 15px 0px;
 }
-.title__indicator {
-  align-self: center;
-  margin-left: 20px;
+
+.title {
+  &__indicator {
+    align-self: center;
+    margin-left: 20px;
+  }
+  &__text {
+    color: $blue-500;
+    font-weight: bold;
+    margin: 0px;
+    margin-right: 20px;
+    align-self: center;
+  }
 }
-.title__text {
-  color: #378bd8;
-  font-weight: bold;
-  margin: 0px;
-  margin-right: 20px;
-  align-self: center;
-}
-.el-progress-bar__inner {
+
+.el-progress ::v-deep .el-progress-bar__inner {
   border-radius: 4px;
-  background-color: linear-gradient(90deg, #67e453 0%, #1f8235 129.17%);
+  background: linear-gradient(90deg, $green-400 0%, $green-800 129.17%);
 }
+
 .text {
   margin: 0px;
   margin-left: 5px;
@@ -88,7 +97,8 @@ export default {
   font-size: 16px;
   font-weight: bold;
 }
+
 .blue {
-  color: #2d81ce;
+  color: $blue-600;
 }
 </style>

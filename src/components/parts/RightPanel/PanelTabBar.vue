@@ -15,12 +15,12 @@
 
 <script>
 export default {
+  name: "panel-tabs",
   data() {
     return {
       tabToShow: "0",
     };
   },
-  name: "panel-tabs",
   methods: {
     handleSelect(key) {
       this.tabToShow = key;
@@ -29,7 +29,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .panel-tabs {
   font-size: 18px;
 }
@@ -41,21 +41,21 @@ export default {
 }
 .el-menu {
   margin-top: 10px;
-}
-.el-menu-item {
-  font-size: 18px;
-  font-weight: bold;
-  margin-right: 15px;
-  margin-left: 25px;
-}
-.el-menu-item.is-active {
-  font-size: 18px;
-}
-.el-menu-item:hover {
-  font-size: 18px;
-}
-.el-menu--horizontal > .el-menu-item {
-  border-bottom: 4px solid #409eff;
-  padding: 0px;
+  &-item {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 15px;
+    margin-left: 25px;
+    &.is-active {
+      font-size: 18px;
+    }
+    &:hover {
+      font-size: 18px;
+    }
+  }
+  &--horizontal > &-item {
+    border-bottom: 4px solid $blue-600;
+    padding: 0px;
+  }
 }
 </style>

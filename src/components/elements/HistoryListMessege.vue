@@ -35,33 +35,39 @@
 <script>
 import Icon from "./Icon";
 export default {
+  name: "history-list",
+  components: { Icon },
   props: {
     message: Object,
   },
-  components: { Icon },
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
 .messages__items {
   display: flex;
   flex-direction: row;
   align-self: center;
   padding-bottom: 5px;
 }
-.items__text {
-  display: flex;
-  flex-direction: row;
-  justify-self: center;
+
+.items {
+  &__text {
+    display: flex;
+    flex-direction: row;
+    justify-self: center;
+  }
+  &__arrow {
+    margin: 0px 15px;
+  }
 }
-.items__arrow {
-  margin: 0px 15px;
-}
+
 .text {
   margin: 0px;
   align-self: center;
   font-size: 16px;
 }
+
 .blue {
-  color: #2d81ce;
+  color: $blue-600;
 }
 </style>

@@ -18,28 +18,31 @@
 <script>
 import VacancyDevider from "@/components/elements/VacancyDevider";
 export default {
+  name: "vacancy-pos-conditions",
+  components: { VacancyDevider },
   props: {
     posConditions: {
       type: Array,
     },
   },
-  name: "vacancy-pos-conditions",
-  components: { VacancyDevider },
 };
 </script>
 
-<style scoped>
-.pos-conditions__title {
-  margin: 0px;
-}
-.pos-conditions__item {
-  margin: 0px;
-  padding-left: 25px;
-}
+<style lang="scss" scoped>
 .item__label {
   margin: 0px;
   font-size: 15px;
   line-height: 24px;
   margin-right: 4px;
+}
+
+.pos-conditions {
+  &__title {
+    margin: 0px;
+  }
+  &__item {
+    margin: 0px;
+    padding-left: 25px;
+  }
 }
 </style>

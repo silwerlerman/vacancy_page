@@ -8,7 +8,7 @@
         v-for="(tag, index) in tags"
         :key="index"
         class="tags__item"
-        v-bind:text="tag"
+        :text="tag"
       />
     </div>
   </div>
@@ -20,33 +20,40 @@ import Tag from "@/components/elements/Tag";
 
 export default {
   name: "vacancy-competencies",
+  components: { VacancyDevider, Tag },
   props: {
     tags: {
       type: Array,
     },
   },
-  components: { VacancyDevider, Tag },
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .competencies__title {
   margin: 0px;
 }
-.vacancy-competencies {
-  max-width: 530px;
+
+.vacancy {
+  &-competencies {
+    max-width: 530px;
+  }
+  &-header {
+    display: flex;
+    flex-direction: column;
+  }
 }
-.vacancy-header {
-  display: flex;
-  flex-direction: column;
-}
+
 .header__tags {
   display: flex;
   flex-direction: row;
   max-width: 530px;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
+  margin-top: -8px;
 }
+
 .tags__item {
+  margin-top: 8px;
   margin-right: 8px;
 }
 </style>

@@ -1,19 +1,20 @@
 <template>
   <el-tag
     effect="plain"
-    v-bind:class="{
+    :class="{
       disabled: disabled,
       big: size === 'big',
       medium: size === 'medium',
       small: size === 'small',
     }"
-    v-bind:closable="closable"
+    :closable="closable"
   >
     {{ text }}</el-tag
   >
 </template>
 <script>
 export default {
+  name: "Tag",
   props: {
     text: {
       type: String,
@@ -42,27 +43,31 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
 .el-tag {
-  border-color: #ececec;
-  background: #faf9f9;
-  color: #378bd8;
+  border-color: $black-200;
+  background: $black-100;
+  color: $blue-500;
   font-size: 16px;
   border-radius: 12px;
+  &:hover {
+    background: $black-200;
+  }
 }
-.el-tag:hover {
-  background: #ececec;
-}
+
 .disabled {
-  background: #ececec;
-  color: #9e9e9e;
+  background: $black-200;
+  color: $black-500;
 }
+
 .big {
   height: 40px;
 }
+
 .medium {
   height: 32px;
 }
+
 .small {
   height: 24px;
 }

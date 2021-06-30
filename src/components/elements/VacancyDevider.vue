@@ -1,7 +1,7 @@
 <template>
   <div
-    v-bind:class="{ 'horizontal-line': hasLine }"
-    v-bind:style="{ height: deviderSize + 'px' }"
+    :class="{ 'horizontal-line': hasLine }"
+    :style="{ height: deviderSize + 'px' }"
   />
 </template>
 
@@ -21,8 +21,8 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .horizontal-line {
-  border-bottom: 1px solid #e2e2e2;
+  border-bottom: 1px solid $black-300;
 }
 </style>

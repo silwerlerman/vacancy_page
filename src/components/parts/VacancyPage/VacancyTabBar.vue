@@ -11,7 +11,7 @@
       <el-menu-item index="0">История</el-menu-item>
       <el-menu-item index="1">Документы</el-menu-item>
     </el-menu>
-    <VacancyHistoryPost v-if="tabToShow === '0'" v-bind:history="history" />
+    <VacancyHistoryPost v-if="tabToShow === '0'" :history="history" />
   </div>
 </template>
 
@@ -19,6 +19,8 @@
 import VacancyDevider from "@/components/elements/VacancyDevider";
 import VacancyHistoryPost from "@/components/parts/VacancyPage/VacancyHistoryPost";
 export default {
+  name: "vacancy-tabs",
+  components: { VacancyDevider, VacancyHistoryPost },
   props: {
     history: Array,
   },
@@ -27,8 +29,6 @@ export default {
       tabToShow: "0",
     };
   },
-  name: "vacancy-tabs",
-  components: { VacancyDevider, VacancyHistoryPost },
   methods: {
     handleSelect(key) {
       this.tabToShow = key;
@@ -37,32 +37,36 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .vacancy-tabs {
   font-size: 18px;
 }
+
 .is-active {
   font-size: 18px;
 }
-.el-tabs__header {
-  margin-bottom: 0px !important;
-}
-.el-menu {
-  margin-top: -20px;
-}
-.el-menu-item {
-  font-size: 18px;
-  font-weight: bold;
-  margin-right: 40px;
-}
-.el-menu-item.is-active {
-  font-size: 18px;
-}
-.el-menu-item:hover {
-  font-size: 18px;
-}
-.el-menu--horizontal > .el-menu-item {
-  border-bottom: 4px solid #409eff;
-  padding: 0px;
+
+.el {
+  &-tabs__header {
+    margin-bottom: 0px !important;
+  }
+  &-menu {
+    margin-top: -20px;
+    &-item {
+      font-size: 18px;
+      font-weight: bold;
+      margin-right: 40px;
+      &.is-active {
+        font-size: 18px;
+      }
+      &:hover {
+        font-size: 18px;
+      }
+    }
+    &--horizontal > &-item {
+      border-bottom: 4px solid $blue-600;
+      padding: 0px;
+    }
+  }
 }
 </style>

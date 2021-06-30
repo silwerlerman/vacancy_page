@@ -18,10 +18,14 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .app {
   font-family: Arial;
-  background-color: #f1f1f1;
+  background-color: $black-100;
+}
+body {
+  margin: 0;
+  padding: 0;
 }
 .wrapper {
   max-width: 1200px;
