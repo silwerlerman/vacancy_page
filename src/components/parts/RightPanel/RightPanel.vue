@@ -137,8 +137,11 @@ export default {
   & ::v-deep &__item {
     font-size: 18px;
     font-weight: bold;
-    color: $blue-600;
+    color: $black-400;
     margin: -10px 0px 7px 0px;
+    &.is-active {
+      color: $blue-600;
+    }
   }
   & ::v-deep &__nav-scroll {
     margin: 25px 0px 0px 25px;
